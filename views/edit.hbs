@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #58257b;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Bố cục linh hoạt: khi màn hình có chiều rộng dưới 600px thì hai cột chồng 
+lên nhau thay vì nằm cạnh nhau */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+}
+}
+
+.main{
+    width: 500px;
+    height: 800px;
+    border-end-end-radius: 2px;
+}
+</style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit </title>
+</head>
+
+<body>
+    
+
+  <div class="main">  
+    <form action="/update" method="post">
+
+        <h2>Edit Product</h2>
+        <input type="hidden" , name="id" , value="{{Toy._id}}">
+
+        Name <br> <input type="text" name="txtName" value="{{Toy.name}}"><br>
+        <br>
+        Price <br><input type="text" name="txtPrice" value="{{Toy.price}}"><br>
+        <br>
+        Image<br><input type="text" name="Imageurl" value="{{Toy.image}}"><br>
+        <input type="submit" value="Update">
+    </form>
+    </div>
+    
+
+  
+  
+</body>
+
+</html>

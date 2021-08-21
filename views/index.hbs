@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Style the body */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+
+    /* Header/logo Title */
+    .header {
+
+      text-align: center;
+      background: #1abc9c;
+      color: white;
+    }
+
+    /* Increase the font size of the heading */
+    .header h1 {
+      font-size: 40px;
+    }
+
+
+    /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+    .navbar {
+      overflow: hidden;
+      background-color: #333;
+      position: sticky;
+      position: -webkit-sticky;
+      top: 0;
+    }
+
+    /* Style the navigation bar links */
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+
+
+    /* Right-aligned link */
+    .navbar a.right {
+      float: right;
+    }
+
+    /* Change color on hover */
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Active/current link */
+    .navbar a.active {
+      background-color: #666;
+      color: white;
+    }
+
+    /* Column container */
+    .row {
+      display: -ms-flexbox;
+      /* IE10 */
+      display: flex;
+      -ms-flex-wrap: wrap;
+      /* IE10 */
+      flex-wrap: wrap;
+    }
+
+    /* Create two unequal columns that sits next to each other */
+    /* Sidebar/left column */
+
+  input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #58257b;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float:left;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Bố cục linh hoạt: khi màn hình có chiều rộng dưới 600px thì hai cột chồng 
+lên nhau thay vì nằm cạnh nhau */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+}
+}
+
+
+    /* Main column */
+    .main {
+      -ms-flex: 70%;
+      /* IE10 */
+      flex: 70%;
+      background-color: white;
+      padding: 20px;
+      padding-right: 10px;
+    }
+ div.product {
+  border: 2px solid #ccc;
+}
+
+div.product:hover {
+  border: 1px solid #777;
+}
+
+div.product img {
+  width: 100%;
+  height: 320px;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 20px 6px;
+  float: left;
+  width: 250px;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+    padding-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+    /* Footer */
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background: #ddd;
+    }
+
+
+
+    .side {
+      -ms-flex: 30%;
+      /* IE10 */
+      flex: 30%;
+      background-color: #f1f1f1;
+      padding: 20px;
+    }
+
+
+    /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 700px) {
+      .row {
+        flex-direction: column;
+
+      }
+    }
+
+    /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+    @media screen and (max-width: 400px) {
+      .navbar a {
+        float: none;
+        width: 100%;
+      }
+    }
+
+    .right{
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+  </style>
+
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+</head>
+
+<body>
+
+  <div class="header">
+
+    <img width="100%"
+      src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/Toys/Avengers/MainBanner_1242x350._CB1198675309_.png"
+      alt="" border="0" />
+  </div>
+
+  <div class="navbar">
+    <a href="#" class="active">Home</a>
+    
+    <div class="right">
+     <form action="/search" method="post">
+       <input type="text" placeholder="NameSearch.." name="txtSearch"/><span style="inline-size: auto;"></span><input type="submit" value="Search">
+        
+    </form>
+    </div>
+    
+   
+    
+  </div>
+
+  <div class="row">
+    <div class="side">
+      <h2>Add Product</h2>
+      <form action="/insert" method="post">
+        Name <input type="text" name="txtName">
+        <span>{{error.name}}</span>
+        <br />
+        <br>
+        Price<input type="text" name="txtPrice">
+        <br>
+        <br>
+        Image<input type="text" name="Imageurl">
+
+        <br>
+        <input type="submit" value="Insert">
+      </form>
+      
+     
+          <iframe width="400" height="225" src="https://www.youtube.com/embed/7LCkMsHeqfA" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+        <iframe width="400" height="225" src="https://www.youtube.com/embed/dE1P4zDhhqw" title="YouTube video player" 
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+     
+    </div>
+
+    <div class="main">
+      {{#each data}}
+      <div class="responsive">
+        <div class="product">
+          <img src="{{image}}" alt="" >
+
+          <div class="desc">
+         <a style="font-size: 25px;">
+            Name: {{name}}
+          </a>
+          <span style= "display:block" ;></span>
+          Price: <span style="color:red;">{{price}}</span>$
+          <span style= "display:block" ;></span>
+          <a href="/delete?id={{_id}}">Delete</a>
+          <a href="/edit?id={{_id}}">Edit</a>
+          </div>
+
+        </div>   
+        
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="footer">
+    <h2>Footer</h2>
+  </div>
+
+  <div class="product">
+    <ul>
+      {{#each data}}
+      {{name}}--{{price}} <br><img style="width: 70px;" src="{{image}}" alt="">
+      <a href="/delete?id={{_id}}">Delete</a>
+      <a href="/edit?id={{_id}}">Edit</a>
+
+      {{/each}}
+    </ul>
+  </div>
+
+
+</body>
+
+</html>
