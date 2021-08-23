@@ -1,10 +1,9 @@
 
 const  EXPRESS = require('express')
+const APP = EXPRESS()
 const {Int32} = require('mongodb');
 
 const { insertfuntion,Deletefuntion,Search,Showall,getToyById,update} = require('./databaseHandler');
-
-const APP = EXPRESS()
 
 APP.use(EXPRESS.urlencoded({extended:true}))
 
@@ -63,6 +62,7 @@ APP.get('/delete',async (req,res)=>{
 APP.post('/Search',async (req,res)=>{
 
     const SearchInput = req.body.txtSearch ;
+    
     const allToys = await Search(SearchInput);
     res.render('index',{data:allToys})
 })

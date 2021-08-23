@@ -86,10 +86,8 @@
   resize: vertical;
 }
 
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
+
+
 
 input[type=submit] {
   background-color: #58257b;
@@ -97,40 +95,12 @@ input[type=submit] {
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
-  float:left;
+  
+  float:right;
 }
 
 input[type=submit]:hover {
   background-color: #45a049;
-}
-
-
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
-
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Bố cục linh hoạt: khi màn hình có chiều rộng dưới 600px thì hai cột chồng 
-lên nhau thay vì nằm cạnh nhau */
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-}
 }
 
 
@@ -185,11 +155,6 @@ div.desc {
   }
 }
 
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 
     /* Footer */
     .footer {
@@ -225,13 +190,12 @@ div.desc {
       }
     }
 
-    .right{
-  float: right;
-  padding: 6px;
+  .right{
   border: none;
   margin-top: 8px;
   margin-right: 16px;
   font-size: 17px;
+  float: right;
 }
 
   </style>
@@ -256,8 +220,9 @@ div.desc {
     <a href="#" class="active">Home</a>
     
     <div class="right">
-     <form action="/search" method="post">
-       <input type="text" placeholder="NameSearch.." name="txtSearch"/><span style="inline-size: auto;"></span><input type="submit" value="Search">
+     <form  action="/search" method="post">
+       <input style="width: 200px;" type="text" placeholder="NameSearch.." name="txtSearch"/>
+       <input type="submit" value="Search">
         
     </form>
     </div>
@@ -284,7 +249,7 @@ div.desc {
       </form>
       
      
-          <iframe width="400" height="225" src="https://www.youtube.com/embed/7LCkMsHeqfA" title="YouTube video player"
+          <iframe style="padding-top: 20px;" width="400" height="225" src="https://www.youtube.com/embed/7LCkMsHeqfA" title="YouTube video player"
         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
         <iframe width="400" height="225" src="https://www.youtube.com/embed/dE1P4zDhhqw" title="YouTube video player" 
@@ -308,6 +273,7 @@ div.desc {
           <span style= "display:block" ;></span>
           <a href="/delete?id={{_id}}">Delete</a>
           <a href="/edit?id={{_id}}">Edit</a>
+          
           </div>
 
         </div>   
@@ -321,16 +287,8 @@ div.desc {
     <h2>Footer</h2>
   </div>
 
-  <div class="product">
-    <ul>
-      {{#each data}}
-      {{name}}--{{price}} <br><img style="width: 70px;" src="{{image}}" alt="">
-      <a href="/delete?id={{_id}}">Delete</a>
-      <a href="/edit?id={{_id}}">Edit</a>
-
-      {{/each}}
-    </ul>
-  </div>
+  
+    
 
 
 </body>

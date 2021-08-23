@@ -15,7 +15,7 @@ async function Deletefuntion(idInput) {
 
 async function Search(SearchInput) {
     const dbo = await getDB();
-    const allToys = await dbo.collection("toys").find({ name: SearchInput }).toArray();
+    const allToys = await dbo.collection("toys").find({ name: SearchInput}).toArray();
     return allToys;
 }
 
