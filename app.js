@@ -31,8 +31,8 @@ APP.post('/insert' , async (req,res)=>{
     const imgInput = req.body.Imageurl;
     var err = {}
     var isError = false;
-    if(nameInput == null || nameInput.length <5){
-        err.name = "Do dai ten >=5 ky tu!"
+    if(nameInput == null ){
+        err.name = "error"
         isError = true;
     }
     
