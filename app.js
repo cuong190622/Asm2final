@@ -35,6 +35,10 @@ APP.post('/insert' , async (req,res)=>{
         err.name = "error"
         isError = true;
     }
+    if(priceInput == null || priceInput.trim() || isNaN(priceInput)){
+        err.price = "Error"
+        isError = true;
+    }
     
     if(isError){
         res.render('index',{error: err})
