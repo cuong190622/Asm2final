@@ -37,7 +37,7 @@ APP.post('/insert' , async (req,res)=>{
     }
     
     if(priceInput == null || isNaN(priceInput)  ){
-        err.price = "giá phải là số "
+        err.price = "price is number "
         isError = true;
     }
 
