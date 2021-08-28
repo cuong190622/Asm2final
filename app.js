@@ -31,20 +31,21 @@ APP.post('/insert' , async (req,res)=>{
     const imgInput = req.body.Imageurl;
     var err = {}
     var isError = false;
-    if(nameInput == null ){
-        err.name = "error"
-        isError = true;
-    }
-    if(priceInput == null || priceInput.trim() || isNaN(priceInput)){
-        err.price = "Error"
+    if(nameInput == null || nameInput.length < 5  ){
+        err.name = "do dai ten >5 "
         isError = true;
     }
     
+    if(priceInput == null || isNaN(priceInput)  ){
+        err.price = "giá phải là số "
+        isError = true;
+    }
+
     if(isError){
         res.render('index',{error: err})
     }
     if(!isError){
-        const newToy = {name:nameInput,price:Int32(priceInput),image:imgInput };
+    const newToy = {name:nameInput,price:Int32(priceInput),image:imgInput };
     await insertfuntion(newToy);
     
     //chuyen huong toi file index
