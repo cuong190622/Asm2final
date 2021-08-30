@@ -16,17 +16,9 @@ async function Showall() {
 
 async function insertfuntion(toys) {
     const dbo = await getDB();
-    const newS = await dbo.collection("toys").insertOne(toys);
+     await dbo.collection("toys").insertOne(toys);
     
-    console.log("gia trị id mơi dc insert la", newS.insertedId.toHexString());
-}
-
-
-
-async function Search(SearchInput) {
-    const dbo = await getDB();
-    const allToys = await dbo.collection("toys").find({ name: SearchInput}).toArray();
-    return allToys;
+    
 }
 
 async function Deletefuntion(idInput) {
@@ -48,4 +40,4 @@ async function update(id,nameInput,priceInput,imageInput){
 
 
 
-module.exports = {getToyById,getDB,insertfuntion,Deletefuntion,Search,Showall,update}
+module.exports = {getToyById,getDB,insertfuntion,Deletefuntion,Showall,update}
